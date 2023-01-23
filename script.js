@@ -90,8 +90,11 @@ todoList.addEventListener('click', function (e) {
     // If we are clicking Remove Button
     if (e.target.tagName === 'BUTTON' && e.target.innerText === 'Remove') {
         const textRemove = e.target.parentElement.firstChild.innerText
+        // Remove this item from the TODO array in this script
         todos.splice(todos.indexOf(textRemove));
+        // Update the Local Storage to reflect the array
         localStorage.setItem('todoStorage', JSON.stringify(todos));
+        // Remove the element in document to reflect our changes
         e.target.parentElement.remove();
     }
     // If we are clicking MARK DONE button
