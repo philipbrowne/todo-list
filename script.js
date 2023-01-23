@@ -106,7 +106,10 @@ todoList.addEventListener('click', function (e) {
 
 // Clear all items in script array and local storage
 clearAll.addEventListener('click', function () {
+    // Empty the Local Storage
     localStorage.clear();
+    // Empty the todos Array
     todos.splice(0, todos.length);
+    // Wipe clean the Inner Html of our todoList OL
     todoList.innerHTML = '';
 })
